@@ -1,0 +1,75 @@
+output "vpc_id" {
+  description = "vpc id"
+  value       = module.vpc.vpc_id
+}
+
+output "iam_role_arn" {
+  description = "iam role arn"
+  value       = module.iam_role.iam_role_arn
+}
+
+output "inline_policy_id" {
+  description = "inline policy id"
+  value       = module.iam_policies.inline_policy_id
+}
+
+output "s3_bucket_name" {
+  description = "s3 bucket name"
+  value       = module.s3.s3_bucket_name
+}
+
+output "s3_bucket_arn" {
+  description = "s3 bucket arn"
+  value       = module.s3.s3_bucket_arn
+}
+
+output "s3_bucket_id" {
+  description = "s3 bucket id"
+  value       = module.s3.s3_bucket_id
+}
+
+output "databricks_mws_credentials_id" {
+  description = "databricks mws credentials id"
+  value       = databricks_mws_credentials.this
+}
+
+output "databricks_mws_network_id" {
+  description = "databricks mws network id"
+  value       = databricks_mws_networks.this.network_name
+}
+
+output "databricks_mws_storage_id" {
+  description = "databricks mws storage id"
+  value       = databricks_mws_storage_configurations.this
+}
+
+output "databricks_mws_storage_bucket_name" {
+  description = "databricks mws storage bucket name"
+  value       = databricks_mws_storage_configurations.this.bucket_name
+}
+
+output "databricks_host" {
+  value = databricks_mws_workspaces.this.workspace_name
+}
+
+output "databricks_credentials_id" {
+  value = databricks_mws_workspaces.this.credentials_id
+}
+
+output "databricks_deployment_name" {
+  value = databricks_mws_workspaces.this.deployment_name
+}
+
+output "storage_configuration_id" {
+  value = databricks_mws_workspaces.this.storage_configuration_id
+}
+
+//// export token for integration tests to run on
+//output "databricks_dapi" {
+//  value     = databricks_token.dapi.id
+//  sensitive = true
+//}
+
+output "workspace_url" {
+  value = databricks_mws_workspaces.this
+}
