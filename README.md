@@ -1,12 +1,12 @@
 <p align="center">
-    <a href="https://github.com/tomarv2/terraform-databricks-workspace/actions/workflows/security_scans.yml" alt="Security Scans">
-        <img src="https://github.com/tomarv2/terraform-databricks-workspace/actions/workflows/security_scans.yml/badge.svg?branch=main" /></a>
+    <a href="https://github.com/tomarv2/terraform-databricks-aws-workspace/actions/workflows/pre-commit.yml" alt="Precommit">
+        <img src="https://github.com/tomarv2/terraform-databricks-aws-workspace/actions/workflows/pre-commit.yml/badge.svg?branch=main" /></a>
     <a href="https://www.apache.org/licenses/LICENSE-2.0" alt="license">
-        <img src="https://img.shields.io/github/license/tomarv2/terraform-databricks-workspace" /></a>
-    <a href="https://github.com/tomarv2/terraform-databricks-workspace/tags" alt="GitHub tag">
-        <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-databricks-workspace" /></a>
-    <a href="https://github.com/tomarv2/terraform-databricks-workspace/pulse" alt="Activity">
-        <img src="https://img.shields.io/github/commit-activity/m/tomarv2/terraform-databricks-workspace" /></a>
+        <img src="https://img.shields.io/github/license/tomarv2/terraform-databricks-aws-workspace" /></a>
+    <a href="https://github.com/tomarv2/terraform-databricks-aws-workspace/tags" alt="GitHub tag">
+        <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-databricks-aws-workspace" /></a>
+    <a href="https://github.com/tomarv2/terraform-databricks-aws-workspace/pulse" alt="Activity">
+        <img src="https://img.shields.io/github/commit-activity/m/tomarv2/terraform-databricks-aws-workspace" /></a>
     <a href="https://stackoverflow.com/users/6679867/tomarv2" alt="Stack Exchange reputation">
         <img src="https://img.shields.io/stackexchange/stackoverflow/r/6679867"></a>
     <a href="https://discord.gg/XH975bzN" alt="chat on Discord">
@@ -15,19 +15,19 @@
         <img src="https://img.shields.io/twitter/follow/varuntomar2019?style=social&logo=twitter"></a>
 </p>
 
-# Terraform module for Databricks Workspace E2 (Part 1)
+# Terraform module for [Databricks AWS Workspace E2 (Part 1)](https://registry.terraform.io/providers/databrickslabs/databricks/latest/docs/guides/aws-workspace)
 
-> ❗️ **Important** 
-> 
+> ❗️ **Important**
+>
 > :point_right: This Terraform module assumes you have, access to: [https://accounts.cloud.databricks.com](https://accounts.cloud.databricks.com)
-> 
+>
 > :point_right: Databricks account username: `databricks_account_username`
 >
-> :point_right: Databricks account password: `databricks_account_password` 
-> 
+> :point_right: Databricks account password: `databricks_account_password`
+>
 > :point_right: Databricks account id, `databricks_account_id` can be found on the top right corner of the page, once you're logged in.
 >
-> :point_right: Part 2: Terraform module for [Databricks Workspace management](https://github.com/tomarv2/terraform-databricks-workspace-management)
+> :point_right: Part 2: Terraform module for [Databricks Workspace management](https://github.com/tomarv2/terraform-databricks-aws-workspace-management)
 
 ## Versions
 
@@ -35,10 +35,10 @@
 - `databrickslabs/databricks` provider version [0.3.1](https://registry.terraform.io/providers/databrickslabs/databricks/latest)
 - AWS provider version [3.29.0](https://registry.terraform.io/providers/hashicorp/aws/latest)
 - `main` branch: Provider versions not pinned to keep up with Terraform releases
-- `tags` releases: Tags are pinned with versions (use <a href="https://github.com/tomarv2/terraform-databricks-workspace/tags" alt="GitHub tag">
-        <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-databricks-workspace" /></a> in your releases)
+- `tags` releases: Tags are pinned with versions (use <a href="https://github.com/tomarv2/terraform-databricks-aws-workspace/tags" alt="GitHub tag">
+        <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-databricks-aws-workspace" /></a> in your releases)
 
-**NOTE:** 
+**NOTE:**
 
 - Read more on [tfremote](https://github.com/tomarv2/tfremote)
 
@@ -46,7 +46,7 @@
 
 Recommended method:
 
-- Create python 3.6+ virtual environment 
+- Create python 3.6+ virtual environment
 ```
 python3 -m venv <venv name>
 ```
@@ -61,9 +61,9 @@ pip install tfremote
 export TF_AWS_BUCKET=<remote state bucket name>
 export TF_AWS_PROFILE=default
 export TF_AWS_BUCKET_REGION=us-west-2
-```  
+```
 
-- Updated `examples` directory to required values. 
+- Updated `examples` directory to required values.
 
 - Run and verify the output before deploying:
 ```
@@ -95,7 +95,7 @@ tf -cloud aws destroy -var='teamid=foo' -var='prjid=bar'
 
 ```
 module "databricks_workspace" {
-  source = "git::git@github.com:tomarv2/terraform-databricks-workspace.git?ref=v0.0.1"
+  source = "git::git@github.com:tomarv2/terraform-databricks-aws-workspace.git?ref=v0.0.1"
 
   profile_for_iam             = "iam-admin"
   databricks_account_username = "example@example.com"
@@ -110,8 +110,6 @@ module "databricks_workspace" {
 
 Please refer to examples directory [link](examples) for references.
 
-### Read more: [link](https://registry.terraform.io/providers/databrickslabs/databricks/latest/docs/guides/aws-workspace)
-
 ## Troubleshooting:
 
 ### IAM policy error
@@ -124,10 +122,8 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 
 - Try creating workspace from UI:
 
-![create_workspace_error](https://github.com/tomarv2/terraform-databricks-workspace/raw/main/docs/images/create_workspace_error.png)
+![create_workspace_error](https://github.com/tomarv2/terraform-databricks-aws-workspace/raw/main/docs/images/create_workspace_error.png)
 
 - Verify if the role and policy exists (assume role should allow external id)
 
-![iam_role_trust_error](https://github.com/tomarv2/terraform-databricks-workspace/raw/main/docs/images/iam_role_trust_error.png)
-
-
+![iam_role_trust_error](https://github.com/tomarv2/terraform-databricks-aws-workspace/raw/main/docs/images/iam_role_trust_error.png)

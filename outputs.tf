@@ -49,27 +49,26 @@ output "databricks_mws_storage_bucket_name" {
 }
 
 output "databricks_host" {
-  value = databricks_mws_workspaces.this.workspace_name
+  description = "databricks hostname"
+  value       = databricks_mws_workspaces.this.workspace_name
 }
 
 output "databricks_credentials_id" {
-  value = databricks_mws_workspaces.this.credentials_id
+  description = "databricks credentials id"
+  value       = databricks_mws_workspaces.this.credentials_id
 }
 
 output "databricks_deployment_name" {
-  value = databricks_mws_workspaces.this.deployment_name
+  description = "databricks deployment name"
+  value       = databricks_mws_workspaces.this.deployment_name
 }
 
 output "storage_configuration_id" {
-  value = databricks_mws_workspaces.this.storage_configuration_id
+  description = "databricks storage configuration id"
+  value       = databricks_mws_workspaces.this.storage_configuration_id
 }
 
-//// export token for integration tests to run on
-//output "databricks_dapi" {
-//  value     = databricks_token.dapi.id
-//  sensitive = true
-//}
-
 output "workspace_url" {
-  value = databricks_mws_workspaces.this
+  description = "databricks workspace url"
+  value       = databricks_mws_workspaces.this
 }

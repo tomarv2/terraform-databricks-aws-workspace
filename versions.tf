@@ -13,10 +13,16 @@ terraform {
       source  = "databrickslabs/databricks"
       version = "0.3.1"
     }
+    random = {
+      version = "~> 3.1"
+    }
+    time = {
+      version = "~> 0.7"
+    }
   }
 }
 
-// initialize provider in "MWS" mode to provision new workspace
+# initialize provider in "MWS" mode to provision new workspace
 provider "databricks" {
   alias    = "mws"
   host     = "https://accounts.cloud.databricks.com"
@@ -24,9 +30,9 @@ provider "databricks" {
   password = var.databricks_account_password
 }
 
-// initialize provider in normal mode
+# initialize provider in normal mode
 provider "databricks" {
-  // in normal scenario you won't have to give providers aliases
+  # in normal scenario you won't have to give providers aliases
   alias = "created_workspace"
   host  = databricks_mws_workspaces.this.workspace_name
 }
