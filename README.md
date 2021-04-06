@@ -27,7 +27,7 @@
 >
 > :point_right: Databricks account id, `databricks_account_id` can be found on the top right corner of the page, once you're logged in.
 >
-> :point_right: Part 2: Terraform module for [Databricks Workspace management](https://github.com/tomarv2/terraform-databricks-aws-workspace-management)
+> :point_right: Part 2: Terraform module for [Databricks Workspace management](https://github.com/tomarv2/terraform-databricks-workspace-management)
 
 ## Versions
 
