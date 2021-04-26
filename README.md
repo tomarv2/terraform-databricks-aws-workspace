@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/tomarv2/terraform-databricks-aws-workspace/actions/workflows/pre-commit.yml" alt="Precommit">
+    <a href="https://github.com/tomarv2/terraform-databricks-aws-workspace/actions/workflows/pre-commit.yml" alt="Pre Commit">
         <img src="https://github.com/tomarv2/terraform-databricks-aws-workspace/actions/workflows/pre-commit.yml/badge.svg?branch=main" /></a>
     <a href="https://www.apache.org/licenses/LICENSE-2.0" alt="license">
         <img src="https://img.shields.io/github/license/tomarv2/terraform-databricks-aws-workspace" /></a>
@@ -15,7 +15,7 @@
         <img src="https://img.shields.io/twitter/follow/varuntomar2019?style=social&logo=twitter"></a>
 </p>
 
-# Terraform module for [Databricks AWS Workspace E2 (Part 1)](https://registry.terraform.io/providers/databrickslabs/databricks/latest/docs/guides/aws-workspace)
+## Terraform module for [Databricks AWS Workspace E2 (Part 1)](https://registry.terraform.io/providers/databrickslabs/databricks/latest/docs/guides/aws-workspace)
 
 > ❗️ **Important**
 >
@@ -28,6 +28,11 @@
 > :point_right: Databricks account id, `databricks_account_id` can be found on the top right corner of the page, once you're logged in.
 >
 > :point_right: Part 2: Terraform module for [Databricks Workspace management](https://github.com/tomarv2/terraform-databricks-workspace-management)
+
+---
+
+![Databricks deployment](https://github.com/tomarv2/terraform-databricks-aws-workspace/raw/main/docs/images/databricks_deployment.png)
+---
 
 ## Versions
 
@@ -95,7 +100,7 @@ tf -cloud aws destroy -var='teamid=foo' -var='prjid=bar'
 
 ```
 module "databricks_workspace" {
-  source = "git::git@github.com:tomarv2/terraform-databricks-aws-workspace.git?ref=v0.0.1"
+  source = "git::git@github.com:tomarv2/terraform-databricks-aws-workspace.git"
 
   profile_for_iam             = "iam-admin"
   databricks_account_username = "example@example.com"
