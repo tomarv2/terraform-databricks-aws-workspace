@@ -76,7 +76,7 @@ output "workspace_url" {
 /*
 output "pat_token" {
   description = "databricks pat"
-  value       = databricks_token.pat.connection
+  value       = databricks_token.pat.id
 }
 
 output "pat_token_duration" {
