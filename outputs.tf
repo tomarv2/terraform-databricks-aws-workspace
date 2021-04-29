@@ -73,6 +73,7 @@ output "workspace_url" {
   value       = databricks_mws_workspaces.this
 }
 
+/*
 output "pat_token" {
   description = "databricks pat"
   value       = databricks_token.pat.id
@@ -82,3 +83,4 @@ output "pat_token_duration" {
   description = "databricks pat"
   value       = databricks_token.pat.lifetime_seconds
 }
+*/
