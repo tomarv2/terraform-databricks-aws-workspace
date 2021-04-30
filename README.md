@@ -42,13 +42,22 @@
 - `tags` releases: Tags are pinned with versions (use <a href="https://github.com/tomarv2/terraform-databricks-aws-workspace/tags" alt="GitHub tag">
         <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-databricks-aws-workspace" /></a> in your releases)
 
-**NOTE:**
-
-- Read more on [tfremote](https://github.com/tomarv2/tfremote)
-
+---
 ## Usage
 
-Recommended method:
+### Option 1:
+
+```
+terrafrom init
+terraform plan -var='teamid=tryme' -var='prjid=project1'
+terraform apply -var='teamid=tryme' -var='prjid=project1'
+terraform destroy -var='teamid=tryme' -var='prjid=project1'
+```
+**Note:** With this option please take care of remote state storage
+
+### Option 2:
+
+#### Recommended method (store remote state in S3 using prjid and teamid to create directory structure):
 
 - Create python 3.6+ virtual environment
 ```
@@ -67,7 +76,7 @@ export TF_AWS_PROFILE=default
 export TF_AWS_BUCKET_REGION=us-west-2
 ```
 
-- Updated `examples` directory to required values.
+- Updated `examples` directory with required values.
 
 - Run and verify the output before deploying:
 ```
@@ -84,18 +93,9 @@ tf -cloud aws apply -var='teamid=foo' -var='prjid=bar'
 tf -cloud aws destroy -var='teamid=foo' -var='prjid=bar'
 ```
 
-> ❗️ **Important** - Two variables are required for using `tf` package:
->
-> - teamid
-> - prjid
->
-> These variables are required to set backend path in the remote storage.
-> Variables can be defined using:
->
-> - As `inline variables` e.g.: `-var='teamid=demo-team' -var='prjid=demo-project'`
-> - Inside `.tfvars` file e.g.: `-var-file=<tfvars file location> `
->
-> For more information refer to [Terraform documentation](https://www.terraform.io/docs/language/values/variables.html)
+**NOTE:**
+
+- Read more on [tfremote](https://github.com/tomarv2/tfremote)
 
 ```
 module "databricks_workspace" {
@@ -117,7 +117,7 @@ Please refer to examples directory [link](examples) for references.
 
 ## Coming up:
 
-- Use [Customer Managed VPC](https://docs.databricks.com/administration-guide/cloud-configurations/aws/customer-managed-vpc.html)
+- **Use** [**Customer Managed VPC**](https://docs.databricks.com/administration-guide/cloud-configurations/aws/customer-managed-vpc.html)
 
 ## Troubleshooting:
 
