@@ -19,7 +19,7 @@
 
 > ❗️ **Important**
 >
-> :point_right: This Terraform module assumes you have, access to: [https://accounts.cloud.databricks.com](https://accounts.cloud.databricks.com)
+> :point_right: This Terraform module assumes you have access to: [https://accounts.cloud.databricks.com](https://accounts.cloud.databricks.com)
 >
 > :point_right: Databricks account username: `databricks_account_username`
 >
@@ -37,10 +37,10 @@
 
 - Module tested for Terraform 0.14.
 - `databrickslabs/databricks` provider version [0.3.3](https://registry.terraform.io/providers/databrickslabs/databricks/latest)
-- AWS provider version [3.30](https://registry.terraform.io/providers/hashicorp/aws/latest)
-- `main` branch: Provider versions not pinned to keep up with Terraform releases
+- AWS provider version [3.30](https://registry.terraform.io/providers/hashicorp/aws/latest).
+- `main` branch: Provider versions not pinned to keep up with Terraform releases.
 - `tags` releases: Tags are pinned with versions (use <a href="https://github.com/tomarv2/terraform-databricks-aws-workspace/tags" alt="GitHub tag">
-        <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-databricks-aws-workspace" /></a> in your releases)
+        <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-databricks-aws-workspace" /></a>).
 
 ---
 ## Usage
@@ -57,7 +57,7 @@ terraform destroy -var='teamid=tryme' -var='prjid=project1'
 
 ### Option 2:
 
-#### Recommended method (store remote state in S3 using prjid and teamid to create directory structure):
+#### Recommended method (store remote state in S3 using `prjid` and `teamid` to create directory structure):
 
 - Create python 3.6+ virtual environment
 ```
