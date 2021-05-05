@@ -1,5 +1,5 @@
 module "databricks_workspace" {
-  source = "git::git@github.com:tomarv2/terraform-databricks-aws-workspace.git?ref=v0.0.3"
+  source = "git::git@github.com:tomarv2/terraform-databricks-aws-workspace.git?ref=v0.0.4"
 
   profile_for_iam             = "iam-admin"
   aws_region                  = "us-east-2"
