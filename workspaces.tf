@@ -2,8 +2,8 @@ resource "databricks_mws_workspaces" "this" {
   provider        = databricks.mws
   account_id      = var.databricks_account_id
   aws_region      = var.aws_region
-  workspace_name  = "${var.teamid}-${var.prjid}-${local.suffix}"
-  deployment_name = "${var.teamid}-${var.prjid}-${local.suffix}"
+  workspace_name  = "${var.teamid}-${var.prjid}"
+  deployment_name = "${var.teamid}-${var.prjid}"
 
   credentials_id           = databricks_mws_credentials.this.credentials_id
   storage_configuration_id = databricks_mws_storage_configurations.this.storage_configuration_id
