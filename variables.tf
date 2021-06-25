@@ -49,3 +49,9 @@ variable "profile_for_iam" {
   default     = null
   type        = string
 }
+
+variable "existing_role_name" {
+  description = "If you want to use existing role name, else a new role will be created"
+  default     = null
+  type        = string
+}

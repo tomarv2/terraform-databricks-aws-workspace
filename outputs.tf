@@ -5,12 +5,12 @@ output "vpc_id" {
 
 output "iam_role_arn" {
   description = "iam role arn"
-  value       = module.iam_role.iam_role_arn
+  value       = module.iam_role.*.iam_role_arn
 }
 
 output "inline_policy_id" {
   description = "inline policy id"
-  value       = module.iam_policies.inline_policy_id
+  value       = module.iam_policies.*.inline_policy_id
 }
 
 output "s3_bucket_name" {
@@ -76,11 +76,11 @@ output "workspace_url" {
 /*
 output "pat_token" {
   description = "databricks pat"
-  value       = databricks_token.pat.id
+  value       = databricks_token.pat.pat_token
 }
+*/
 
 output "pat_token_duration" {
   description = "databricks pat"
   value       = databricks_token.pat.lifetime_seconds
 }
-*/
