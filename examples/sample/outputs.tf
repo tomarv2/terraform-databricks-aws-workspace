@@ -21,11 +21,13 @@ output "databricks_mws_network_id" {
 output "storage_configuration_id" {
   description = "databricks mws storage id"
   value       = module.databricks_workspace.databricks_mws_storage_id
+  sensitive   = true
 }
 
 output "databricks_host" {
   description = "databricks workspace url"
   value       = module.databricks_workspace.workspace_url
+  sensitive   = true
 }
 
 output "databricks_credentials_id" {
@@ -43,9 +45,9 @@ output "pat_token" {
   description = "databricks pat"
   value       = module.databricks_workspace.pat_token
 }
+*/
 
 output "pat_token_duration" {
   description = "databricks pat"
   value       = module.databricks_workspace.pat_token_duration
 }
-*/

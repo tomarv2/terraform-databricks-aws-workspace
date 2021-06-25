@@ -1,17 +1,12 @@
-provider "aws" {
-  region  = var.aws_region
-  profile = var.profile_to_use
-}
-
 terraform {
-  required_version = ">= 0.14"
+  required_version = ">= 1.0.1"
   required_providers {
     aws = {
-      version = "~> 3.30"
+      version = "~> 3.47"
     }
     databricks = {
       source  = "databrickslabs/databricks"
-      version = "0.3.4"
+      version = "0.3.5"
     }
     random = {
       version = "~> 3.1"
@@ -20,6 +15,24 @@ terraform {
       version = "~> 0.7"
     }
   }
+}
+
+provider "aws" {
+  region  = var.aws_region
+  profile = var.profile_to_use
+  default_tags {
+    tags = {
+      Name    = "${var.teamid}-${var.prjid}"
+      team    = var.teamid
+      project = var.prjid
+    }
+  }
+}
+
+provider "aws" {
+  alias   = "iam-management"
+  region  = var.aws_region
+  profile = local.profile_to_use
 }
 
 # initialize provider in "MWS" mode to provision new workspace

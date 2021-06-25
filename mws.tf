@@ -10,9 +10,10 @@ resource "databricks_mws_networks" "this" {
 resource "databricks_mws_credentials" "this" {
   provider         = databricks.mws
   account_id       = var.databricks_account_id
-  role_arn         = module.iam_role.iam_role_arn
+  role_arn         = var.existing_role_name != null ? var.existing_role_name : join("", module.iam_role.*.iam_role_arn)
   credentials_name = "${var.teamid}-${var.prjid}-${local.suffix}"
-  depends_on       = [module.iam_role]
+
+  depends_on = [module.iam_role]
 }
 
 resource "databricks_mws_storage_configurations" "this" {
