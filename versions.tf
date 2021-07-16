@@ -47,5 +47,6 @@ provider "databricks" {
 provider "databricks" {
   # in normal scenario you won't have to give providers aliases
   alias = "created_workspace"
-  host  = databricks_mws_workspaces.this.workspace_name
+
+  host = databricks_mws_workspaces.this.workspace_name
 }
