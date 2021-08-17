@@ -187,7 +187,6 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 3.38.0 |
 | <a name="provider_databricks"></a> [databricks](#provider\_databricks) | 0.3.3 |
-| <a name="provider_databricks.created_workspace"></a> [databricks.created\_workspace](#provider\_databricks.created\_workspace) | 0.3.3 |
 | <a name="provider_databricks.mws"></a> [databricks.mws](#provider\_databricks.mws) | 0.3.3 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.1.0 |
 | <a name="provider_time"></a> [time](#provider\_time) | 0.7.1 |
@@ -199,7 +198,7 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 | <a name="module_iam_policies"></a> [iam\_policies](#module\_iam\_policies) | git::git@github.com:tomarv2/terraform-aws-iam-policies.git | v0.0.4 |
 | <a name="module_iam_role"></a> [iam\_role](#module\_iam\_role) | git::git@github.com:tomarv2/terraform-aws-iam-role.git//modules/iam_role_external | v0.0.4 |
 | <a name="module_s3"></a> [s3](#module\_s3) | git::git@github.com:tomarv2/terraform-aws-s3.git | v0.0.3 |
-| <a name="module_vpc"></a> [vpc](#module\_vpc) | git::git@github.com:tomarv2/terraform-aws-vpc.git | v0.0.2 |
+| <a name="module_vpc"></a> [vpc](#module\_vpc) | git::git@github.com:tomarv2/terraform-aws-vpc.git | v0.0.3 |
 
 ## Resources
 
@@ -210,7 +209,6 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 | [databricks_mws_networks.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/resources/mws_networks) | resource |
 | [databricks_mws_storage_configurations.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/resources/mws_storage_configurations) | resource |
 | [databricks_mws_workspaces.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/resources/mws_workspaces) | resource |
-| [databricks_token.pat](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/resources/token) | resource |
 | [random_string.naming](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [time_sleep.wait](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) | resource |
 | [databricks_aws_assume_role_policy.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/data-sources/aws_assume_role_policy) | data source |
@@ -222,6 +220,7 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | default aws region | `string` | `"us-west-2"` | no |
+| <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | The CIDR block for the VPC | `string` | `"10.4.0.0/16"` | no |
 | <a name="input_databricks_account_id"></a> [databricks\_account\_id](#input\_databricks\_account\_id) | External ID provided by third party. | `string` | n/a | yes |
 | <a name="input_databricks_account_password"></a> [databricks\_account\_password](#input\_databricks\_account\_password) | databricks account password | `string` | n/a | yes |
 | <a name="input_databricks_account_username"></a> [databricks\_account\_username](#input\_databricks\_account\_username) | databricks account username | `string` | n/a | yes |
@@ -244,7 +243,6 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 | <a name="output_databricks_mws_storage_id"></a> [databricks\_mws\_storage\_id](#output\_databricks\_mws\_storage\_id) | databricks mws storage id |
 | <a name="output_iam_role_arn"></a> [iam\_role\_arn](#output\_iam\_role\_arn) | iam role arn |
 | <a name="output_inline_policy_id"></a> [inline\_policy\_id](#output\_inline\_policy\_id) | inline policy id |
-| <a name="output_pat_token_duration"></a> [pat\_token\_duration](#output\_pat\_token\_duration) | databricks pat |
 | <a name="output_s3_bucket_arn"></a> [s3\_bucket\_arn](#output\_s3\_bucket\_arn) | s3 bucket arn |
 | <a name="output_s3_bucket_id"></a> [s3\_bucket\_id](#output\_s3\_bucket\_id) | s3 bucket id |
 | <a name="output_s3_bucket_name"></a> [s3\_bucket\_name](#output\_s3\_bucket\_name) | s3 bucket name |
