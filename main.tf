@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "git::git@github.com:tomarv2/terraform-aws-vpc.git?ref=v0.0.3"
+  source = "git::git@github.com:tomarv2/terraform-aws-vpc.git?ref=v0.0.4"
 
   enable_dns_hostnames   = true
   enable_nat_gateway     = true
