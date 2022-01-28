@@ -1,5 +1,5 @@
 module "databricks_workspace" {
-  source = "git::git@github.com:tomarv2/terraform-databricks-aws-workspace.git?ref=v0.0.7"
+  source = "../../"
 
   # NOTE: One of the below is required:
   # - 'profile_for_iam' - for IAM creation (if none is provided 'default' is used)

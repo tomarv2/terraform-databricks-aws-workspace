@@ -55,3 +55,9 @@ variable "existing_role_name" {
   default     = null
   type        = string
 }
+
+variable "cidr_block" {
+  description = "The CIDR block for the VPC"
+  default     = "10.4.0.0/16"
+  type        = string
+}

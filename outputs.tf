@@ -3,6 +3,20 @@ output "vpc_id" {
   value       = module.vpc.vpc_id
 }
 
+output "vpc_route_table_ids" {
+  description = "list of VPC route tables IDs"
+  value       = concat(module.vpc.private_route_table_ids, module.vpc.public_route_table_ids)
+}
+
+output "vpc_security_group_ids" {
+  description = "list of VPC security group IDs"
+  value       = [module.vpc.default_security_group_id]
+}
+output "vpc_subnet_ids" {
+  description = "list of subnet ids within VPC"
+  value       = concat(module.vpc.private_subnets, module.vpc.public_subnets)
+}
+
 output "iam_role_arn" {
   description = "iam role arn"
   value       = module.iam_role.*.iam_role_arn
