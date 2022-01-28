@@ -198,7 +198,7 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 | <a name="module_iam_policies"></a> [iam\_policies](#module\_iam\_policies) | git::git@github.com:tomarv2/terraform-aws-iam-policies.git | v0.0.4 |
 | <a name="module_iam_role"></a> [iam\_role](#module\_iam\_role) | git::git@github.com:tomarv2/terraform-aws-iam-role.git//modules/iam_role_external | v0.0.4 |
 | <a name="module_s3"></a> [s3](#module\_s3) | git::git@github.com:tomarv2/terraform-aws-s3.git | v0.0.3 |
-| <a name="module_vpc"></a> [vpc](#module\_vpc) | git::git@github.com:tomarv2/terraform-aws-vpc.git | v0.0.3 |
+| <a name="module_vpc"></a> [vpc](#module\_vpc) | git::git@github.com:tomarv2/terraform-aws-vpc.git | v0.0.4 |
 
 ## Resources
 
@@ -248,4 +248,7 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 | <a name="output_s3_bucket_name"></a> [s3\_bucket\_name](#output\_s3\_bucket\_name) | s3 bucket name |
 | <a name="output_storage_configuration_id"></a> [storage\_configuration\_id](#output\_storage\_configuration\_id) | databricks storage configuration id |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | vpc id |
+| <a name="output_vpc_route_table_ids"></a> [vpc\_route\_table\_ids](#output\_vpc\_route\_table\_ids) | list of VPC route tables IDs |
+| <a name="output_vpc_security_group_ids"></a> [vpc\_security\_group\_ids](#output\_vpc\_security\_group\_ids) | list of VPC security group IDs |
+| <a name="output_vpc_subnet_ids"></a> [vpc\_subnet\_ids](#output\_vpc\_subnet\_ids) | list of subnet ids within VPC |
 | <a name="output_workspace_url"></a> [workspace\_url](#output\_workspace\_url) | databricks workspace url |
