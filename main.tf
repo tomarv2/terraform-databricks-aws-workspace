@@ -60,7 +60,7 @@ module "iam_policies" {
 }
 
 module "s3" {
-  source = "git::git@github.com:tomarv2/terraform-aws-s3.git?ref=v0.0.6"
+  source = "git::git@github.com:tomarv2/terraform-aws-s3.git?ref=v0.0.7"
 
   # -----------------------------------------
   # Do not change the teamid, prjid once set.
