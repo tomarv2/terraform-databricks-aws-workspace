@@ -17,17 +17,9 @@ terraform {
   }
 }
 
-
 provider "aws" {
   region  = var.aws_region
   profile = var.profile_to_use
-  default_tags {
-    tags = {
-      Name    = "${var.teamid}-${var.prjid}"
-      team    = var.teamid
-      project = var.prjid
-    }
-  }
 }
 
 provider "aws" {
