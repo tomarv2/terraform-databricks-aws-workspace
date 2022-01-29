@@ -20,10 +20,17 @@ variable "aws_region" {
   default     = "us-west-2"
 }
 
+variable "databricks_hostname" {
+  description = "databricks hostname"
+  type        = string
+  default     = "https://accounts.cloud.databricks.com"
+}
+
 variable "databricks_account_username" {
   description = "databricks account username"
   type        = string
 }
+
 variable "databricks_account_password" {
   description = "databricks account password"
   type        = string

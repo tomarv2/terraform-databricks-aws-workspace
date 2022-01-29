@@ -1,6 +1,7 @@
 module "vpc" {
   source = "git::git@github.com:tomarv2/terraform-aws-vpc.git?ref=v0.0.4"
 
+  aws_region             = var.aws_region
   enable_dns_hostnames   = true
   enable_nat_gateway     = true
   single_nat_gateway     = true
@@ -25,12 +26,11 @@ module "vpc" {
 }
 
 module "iam_role" {
-  source = "git::git@github.com:tomarv2/terraform-aws-iam-role.git//modules/iam_role_external?ref=v0.0.4"
+  source = "git::git@github.com:tomarv2/terraform-aws-iam-role.git//modules/iam_role_external?ref=v0.0.7"
 
   count = var.existing_role_name == null ? 1 : 0
 
   assume_role_policy = data.databricks_aws_assume_role_policy.this.json
-  external_id        = var.databricks_account_id
   # -----------------------------------------
   # Do not change the teamid, prjid once set.
   teamid = var.teamid
@@ -60,9 +60,8 @@ module "iam_policies" {
 }
 
 module "s3" {
-  source = "git::git@github.com:tomarv2/terraform-aws-s3.git?ref=v0.0.3"
+  source = "git::git@github.com:tomarv2/terraform-aws-s3.git?ref=v0.0.6"
 
-  aws_region = var.aws_region
   # -----------------------------------------
   # Do not change the teamid, prjid once set.
   teamid = var.teamid

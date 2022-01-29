@@ -25,7 +25,7 @@
 >
 > :point_right: Databricks account password: `databricks_account_password`
 >
-> :point_right: Databricks account id, `databricks_account_id` can be found on the top right corner of the page, once you're logged in.
+> :point_right: Databricks account id, `databricks_account_id` can be found on the bottom left corner of the page, once you're logged in.
 >
 > :point_right: Part 2: Terraform module for [Databricks Workspace management](https://github.com/tomarv2/terraform-databricks-workspace-management)
 
@@ -36,7 +36,7 @@
 ## Versions
 
 - Module tested for Terraform 1.0.1.
-- `databrickslabs/databricks` provider version [0.3.5](https://registry.terraform.io/providers/databrickslabs/databricks/latest)
+- `databrickslabs/databricks` provider version [0.4.7](https://registry.terraform.io/providers/databrickslabs/databricks/latest)
 - AWS provider version [3.47](https://registry.terraform.io/providers/hashicorp/aws/latest).
 - `main` branch: Provider versions not pinned to keep up with Terraform releases.
 - `tags` releases: Tags are pinned with versions (use <a href="https://github.com/tomarv2/terraform-databricks-aws-workspace/tags" alt="GitHub tag">
