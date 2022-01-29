@@ -1,12 +1,17 @@
+provider "aws" {
+  region  = var.aws_region
+  profile = var.profile_to_use
+}
+
 terraform {
-  required_version = ">= 1.0.1"
+  required_version = ">= 0.14"
   required_providers {
     aws = {
-      version = "~> 3.47"
+      version = "~> 3.30"
     }
     databricks = {
       source  = "databrickslabs/databricks"
-      version = "0.4.7"
+      version = "0.3.4"
     }
     random = {
       version = "~> 3.1"
@@ -17,23 +22,10 @@ terraform {
   }
 }
 
-provider "aws" {
-  region  = var.aws_region
-  profile = var.profile_to_use
-}
-
-provider "aws" {
-  alias = "iam-management"
-
-  region  = var.aws_region
-  profile = local.profile_to_use
-}
-
 # initialize provider in "MWS" mode to provision new workspace
 provider "databricks" {
-  alias = "mws"
-
-  host     = var.databricks_hostname
+  alias    = "mws"
+  host     = "https://accounts.cloud.databricks.com"
   username = var.databricks_account_username
   password = var.databricks_account_password
 }
@@ -42,6 +34,5 @@ provider "databricks" {
 provider "databricks" {
   # in normal scenario you won't have to give providers aliases
   alias = "created_workspace"
-
-  host = databricks_mws_workspaces.this.workspace_name
+  host  = databricks_mws_workspaces.this.workspace_name
 }

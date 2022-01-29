@@ -3,43 +3,54 @@ output "vpc_id" {
   value       = module.vpc.vpc_id
 }
 
-output "vpc_route_table_ids" {
-  description = "list of VPC route tables IDs"
-  value       = concat(module.vpc.private_route_table_ids, module.vpc.public_route_table_ids)
+output "private_route_table_ids" {
+  description = "list of private VPC route tables IDs"
+  value       = module.vpc.private_route_table_ids
 }
 
-output "vpc_security_group_ids" {
-  description = "list of VPC security group IDs"
-  value       = [module.vpc.default_security_group_id]
+output "public_route_table_ids" {
+  description = "list of public VPC route tables IDs"
+  value       = module.vpc.public_route_table_ids
 }
-output "vpc_subnet_ids" {
-  description = "list of subnet ids within VPC"
-  value       = concat(module.vpc.private_subnets, module.vpc.public_subnets)
+
+output "security_group_ids" {
+  description = "list of VPC security group IDs"
+  value       = module.vpc.default_security_group_id
+}
+
+output "private_subnet_ids" {
+  description = "list of private subnet ids within VPC"
+  value       = module.vpc.private_subnet_ids
+}
+
+output "public_subnet_ids" {
+  description = "list of public subnet ids within VPC"
+  value       = module.vpc.public_subnet_ids
 }
 
 output "iam_role_arn" {
   description = "iam role arn"
-  value       = module.iam_role.*.iam_role_arn
+  value       = module.iam_role.iam_role_arn
 }
 
 output "inline_policy_id" {
   description = "inline policy id"
-  value       = module.iam_policies.*.inline_policy_id
+  value       = module.iam_policies.inline_policy_id
 }
 
 output "s3_bucket_name" {
   description = "s3 bucket name"
-  value       = module.s3.bucket_name
+  value       = module.s3.s3_bucket_name
 }
 
 output "s3_bucket_arn" {
   description = "s3 bucket arn"
-  value       = module.s3.bucket_arn
+  value       = module.s3.s3_bucket_arn
 }
 
 output "s3_bucket_id" {
   description = "s3 bucket id"
-  value       = module.s3.bucket_id
+  value       = module.s3.s3_bucket_id
 }
 
 output "databricks_mws_credentials_id" {
@@ -65,6 +76,7 @@ output "databricks_mws_storage_bucket_name" {
 output "databricks_host" {
   description = "databricks hostname"
   value       = databricks_mws_workspaces.this.workspace_name
+  sensitive = true
 }
 
 output "databricks_credentials_id" {
@@ -86,11 +98,3 @@ output "workspace_url" {
   description = "databricks workspace url"
   value       = databricks_mws_workspaces.this
 }
-
-/*
-output "databricks_token" {
-  description = "databricks token"
-  value       = databricks_token.pat.id
-  sensitive   = true
-}
-*/
