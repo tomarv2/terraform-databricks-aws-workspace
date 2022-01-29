@@ -57,12 +57,7 @@ output "databricks_deployment_name" {
 /*
 output "pat_token" {
   description = "databricks pat"
-  value       = module.databricks_workspace.pat_token
-}
-
-
-output "pat_token_duration" {
-  description = "databricks pat"
-  value       = module.databricks_workspace.pat_token_duration
+  value       = module.databricks_workspace.databricks_token
+  sensitive   = true
 }
 */

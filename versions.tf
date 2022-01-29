@@ -6,7 +6,7 @@ terraform {
     }
     databricks = {
       source  = "databrickslabs/databricks"
-      version = "0.3.5"
+      version = "0.4.7"
     }
     random = {
       version = "~> 3.1"
@@ -16,6 +16,7 @@ terraform {
     }
   }
 }
+
 
 provider "aws" {
   region  = var.aws_region
@@ -30,15 +31,17 @@ provider "aws" {
 }
 
 provider "aws" {
-  alias   = "iam-management"
+  alias = "iam-management"
+
   region  = var.aws_region
   profile = local.profile_to_use
 }
 
 # initialize provider in "MWS" mode to provision new workspace
 provider "databricks" {
-  alias    = "mws"
-  host     = "https://accounts.cloud.databricks.com"
+  alias = "mws"
+
+  host     = var.databricks_hostname
   username = var.databricks_account_username
   password = var.databricks_account_password
 }

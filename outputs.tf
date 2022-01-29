@@ -29,17 +29,17 @@ output "inline_policy_id" {
 
 output "s3_bucket_name" {
   description = "s3 bucket name"
-  value       = module.s3.s3_bucket_name
+  value       = module.s3.bucket_name
 }
 
 output "s3_bucket_arn" {
   description = "s3 bucket arn"
-  value       = module.s3.s3_bucket_arn
+  value       = module.s3.bucket_arn
 }
 
 output "s3_bucket_id" {
   description = "s3 bucket id"
-  value       = module.s3.s3_bucket_id
+  value       = module.s3.bucket_id
 }
 
 output "databricks_mws_credentials_id" {
@@ -92,11 +92,5 @@ output "databricks_token" {
   description = "databricks token"
   value       = databricks_token.pat.id
   sensitive   = true
-}
-
-
-output "pat_token_duration" {
-  description = "databricks pat"
-  value       = databricks_token.pat.lifetime_seconds
 }
 */
