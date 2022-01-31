@@ -13,8 +13,8 @@ output "public_route_table_ids" {
   value       = module.vpc.public_route_table_ids
 }
 
-output "security_group_ids" {
-  description = "VPC security group IDs"
+output "security_group_id" {
+  description = "VPC security group ID"
   value       = module.vpc.security_group_id
 }
 
