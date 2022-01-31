@@ -8,9 +8,9 @@ output "route_table_ids" {
   value       = concat( module.databricks_workspace.private_route_table_ids, module.databricks_workspace.public_route_table_ids )
 }
 
-output "security_group_ids" {
-  description = "list of VPC security group IDs"
-  value       = [module.databricks_workspace.security_group_ids]
+output "security_group_id" {
+  description = "VPC security group IDs"
+  value       = module.databricks_workspace.security_group_id
 }
 output "subnet_ids" {
   description = "list of subnet ids within VPC"

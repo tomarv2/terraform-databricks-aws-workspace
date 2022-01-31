@@ -14,8 +14,8 @@ output "public_route_table_ids" {
 }
 
 output "security_group_ids" {
-  description = "list of VPC security group IDs"
-  value       = module.vpc.default_security_group_id
+  description = "VPC security group IDs"
+  value       = module.vpc.security_group_id
 }
 
 output "private_subnet_ids" {
