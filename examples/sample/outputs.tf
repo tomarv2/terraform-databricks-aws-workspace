@@ -8,13 +8,13 @@ output "route_table_ids" {
   value       = concat( module.databricks_workspace.private_route_table_ids, module.databricks_workspace.public_route_table_ids )
 }
 
-output "security_group_id" {
+output "default_security_group_id" {
   description = "VPC security group IDs"
-  value       = module.databricks_workspace.security_group_id
+  value       = module.databricks_workspace.default_security_group_id
 }
 output "subnet_ids" {
   description = "list of subnet ids within VPC"
-  value       = concat( module.databricks_workspace.private_subnet_ids, module.databricks_workspace.public_subnet_ids )
+  value       = concat( module.databricks_workspace.private_subnets, module.databricks_workspace.public_subnets )
 }
 
 output "iam_role_arn" {

@@ -13,19 +13,19 @@ output "public_route_table_ids" {
   value       = module.vpc.public_route_table_ids
 }
 
-output "security_group_id" {
+output "default_security_group_id" {
   description = "VPC security group ID"
-  value       = module.vpc.security_group_id
+  value       = module.vpc.default_security_group_id
 }
 
-output "private_subnet_ids" {
+output "private_subnets" {
   description = "list of private subnet ids within VPC"
-  value       = module.vpc.private_subnet_ids
+  value       = module.vpc.private_subnets
 }
 
-output "public_subnet_ids" {
+output "public_subnets" {
   description = "list of public subnet ids within VPC"
-  value       = module.vpc.public_subnet_ids
+  value       = module.vpc.public_subnets
 }
 
 output "iam_role_arn" {
