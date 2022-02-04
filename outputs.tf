@@ -8,8 +8,8 @@ output "vpc_route_table_ids" {
   value       = concat(module.vpc.private_route_table_ids, module.vpc.public_route_table_ids)
 }
 
-output "vpc_security_group_ids" {
-  description = "list of VPC security group IDs"
+output "vpc_security_group_id" {
+  description = "list of VPC security group ID"
   value       = [module.vpc.default_security_group_id]
 }
 output "vpc_subnet_ids" {

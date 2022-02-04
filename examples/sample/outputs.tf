@@ -8,9 +8,9 @@ output "vpc_route_table_ids" {
   value       = module.databricks_workspace.vpc_route_table_ids
 }
 
-output "vpc_security_group_ids" {
-  description = "list of VPC security group IDs"
-  value       = module.databricks_workspace.vpc_security_group_ids
+output "vpc_security_group_id" {
+  description = "VPC security group ID"
+  value       = module.databricks_workspace.vpc_security_group_id
 }
 output "vpc_subnet_ids" {
   description = "list of subnet ids within VPC"
