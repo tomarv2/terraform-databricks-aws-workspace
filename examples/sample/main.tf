@@ -1,6 +1,7 @@
 provider "aws" {
   region = "us-west-2"
 }
+
 module "databricks_workspace" {
   source = "../../"
 
