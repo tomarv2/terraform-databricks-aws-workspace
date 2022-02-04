@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## [v0.1.1](https://github.com/tomarv2/terraform-databricks-aws-workspace/releases/tag/v0.1.1) - 2022-02-04 02:21:19
+
+*No description*
+
+### Bug Fixes
+
+- general:
+  - fixing output ([768bfc1](https://github.com/tomarv2/terraform-databricks-aws-workspace/commit/768bfc1b4a47c72d21a6679728eb0292f555ebb4)) ([#29](https://github.com/tomarv2/terraform-databricks-aws-workspace/pull/29))
+
+## [v0.0.6-updated](https://github.com/tomarv2/terraform-databricks-aws-workspace/releases/tag/v0.0.6-updated) - 2022-01-31 19:17:02
+
+*No description*
+
 ## [v0.1.0](https://github.com/tomarv2/terraform-databricks-aws-workspace/releases/tag/v0.1.0) - 2022-01-29 09:41:23
 
 *No description*
