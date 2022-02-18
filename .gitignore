@@ -81,4 +81,4 @@ _testmain.go
 
 # ignore test file(s)
 **test**
-.external_modules
+#.external_modules
