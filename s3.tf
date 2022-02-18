@@ -1,3 +1,13 @@
+module "s3" {
+  source = "git::git@github.com:tomarv2/terraform-aws-s3.git?ref=v0.0.7"
+
+  custom_tags = var.custom_tags
+  # -----------------------------------------
+  # Do not change the teamid, prjid once set.
+  teamid = var.teamid
+  prjid  = "${var.prjid}-${local.suffix}"
+}
+
 data "databricks_aws_bucket_policy" "this" {
   bucket = module.s3.bucket_name
 }

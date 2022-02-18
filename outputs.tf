@@ -87,10 +87,18 @@ output "workspace_url" {
   value       = databricks_mws_workspaces.this
 }
 
-/*
 output "databricks_token" {
-  description = "databricks token"
-  value       = databricks_token.pat.id
+  description = "Value of the newly created token"
+  value       = databricks_token.pat.token_value
   sensitive   = true
 }
-*/
+
+output "nonsensitive_databricks_token" {
+  description = "Value of the newly created token (nonsensitive)"
+  value       = nonsensitive(databricks_token.pat.token_value)
+}
+
+output "databricks_token_lifetime_hours" {
+  description = "Token validity"
+  value       = databricks_token.pat.lifetime_seconds / 3600
+}

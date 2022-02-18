@@ -14,6 +14,13 @@ module "databricks_workspace" {
   databricks_account_username = "example@example.com"
   databricks_account_password = "sample123!"
   databricks_account_id       = "1234567-1234-1234-1234-1234567"
+
+  custom_tags = tomap(
+    {
+      "Dept"        = "data",
+      "Application" = "demo"
+    }
+  )
   # -----------------------------------------
   # Do not change the teamid, prjid once set.
   teamid = var.teamid

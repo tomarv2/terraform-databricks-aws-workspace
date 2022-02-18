@@ -58,12 +58,3 @@ module "iam_policies" {
     aws = aws.iam-management
   }
 }
-
-module "s3" {
-  source = "git::git@github.com:tomarv2/terraform-aws-s3.git?ref=v0.0.7"
-
-  # -----------------------------------------
-  # Do not change the teamid, prjid once set.
-  teamid = var.teamid
-  prjid  = "${var.prjid}-${local.suffix}"
-}
