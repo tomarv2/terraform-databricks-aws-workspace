@@ -25,8 +25,8 @@ repos:
       - id: check-yaml
 
   - repo: https://github.com/bridgecrewio/checkov.git
-    rev: '2.0.531'
+    rev: '2.0.868'
     hooks:
     - id: checkov
       verbose: true
-      args: [-d, '.', --framework, 'terraform']
+      args: [-d, '.', --framework, 'terraform', --download-external-modules, 'True', '--skip-check', "CKV2_AWS_6,CKV2_AWS_11,CKV2_AWS_12,CKV_AWS_18,CKV2_AWS_19,CKV_AWS_130,CKV_AWS_144,CKV_AWS_145"]

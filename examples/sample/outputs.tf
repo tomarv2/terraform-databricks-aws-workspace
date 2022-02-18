@@ -54,10 +54,18 @@ output "databricks_deployment_name" {
   value       = module.databricks_workspace.databricks_deployment_name
 }
 
-/*
-output "pat_token" {
-  description = "databricks pat"
+output "sensitive_databricks_token" {
+  description = "Value of the newly created token"
   value       = module.databricks_workspace.databricks_token
   sensitive   = true
 }
-*/
+
+output "databricks_token" {
+  description = "Value of the newly created token (nonsensitive)"
+  value       = module.databricks_workspace.nonsensitive_databricks_token
+}
+
+output "databricks_token_lifetime_hours" {
+  description = "Token validity"
+  value       = module.databricks_workspace.databricks_token_lifetime_hours
+}

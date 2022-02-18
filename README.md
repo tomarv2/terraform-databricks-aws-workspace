@@ -177,7 +177,7 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.1 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.47 |
-| <a name="requirement_databricks"></a> [databricks](#requirement\_databricks) | 0.3.5 |
+| <a name="requirement_databricks"></a> [databricks](#requirement\_databricks) | 0.4.7 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.1 |
 | <a name="requirement_time"></a> [time](#requirement\_time) | ~> 0.7 |
 
@@ -185,19 +185,19 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.38.0 |
-| <a name="provider_databricks"></a> [databricks](#provider\_databricks) | 0.3.3 |
-| <a name="provider_databricks.mws"></a> [databricks.mws](#provider\_databricks.mws) | 0.3.3 |
-| <a name="provider_random"></a> [random](#provider\_random) | 3.1.0 |
-| <a name="provider_time"></a> [time](#provider\_time) | 0.7.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.47 |
+| <a name="provider_databricks"></a> [databricks](#provider\_databricks) | 0.4.7 |
+| <a name="provider_databricks.mws"></a> [databricks.mws](#provider\_databricks.mws) | 0.4.7 |
+| <a name="provider_random"></a> [random](#provider\_random) | ~> 3.1 |
+| <a name="provider_time"></a> [time](#provider\_time) | ~> 0.7 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_iam_policies"></a> [iam\_policies](#module\_iam\_policies) | git::git@github.com:tomarv2/terraform-aws-iam-policies.git | v0.0.4 |
-| <a name="module_iam_role"></a> [iam\_role](#module\_iam\_role) | git::git@github.com:tomarv2/terraform-aws-iam-role.git//modules/iam_role_external | v0.0.4 |
-| <a name="module_s3"></a> [s3](#module\_s3) | git::git@github.com:tomarv2/terraform-aws-s3.git | v0.0.3 |
+| <a name="module_iam_role"></a> [iam\_role](#module\_iam\_role) | git::git@github.com:tomarv2/terraform-aws-iam-role.git//modules/iam_role_external | v0.0.7 |
+| <a name="module_s3"></a> [s3](#module\_s3) | git::git@github.com:tomarv2/terraform-aws-s3.git | v0.0.7 |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | git::git@github.com:tomarv2/terraform-aws-vpc.git | v0.0.4 |
 
 ## Resources
@@ -205,15 +205,15 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 | Name | Type |
 |------|------|
 | [aws_s3_bucket_policy.root_bucket_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy) | resource |
-| [databricks_mws_credentials.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/resources/mws_credentials) | resource |
-| [databricks_mws_networks.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/resources/mws_networks) | resource |
-| [databricks_mws_storage_configurations.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/resources/mws_storage_configurations) | resource |
-| [databricks_mws_workspaces.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/resources/mws_workspaces) | resource |
+| [databricks_mws_credentials.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.4.7/docs/resources/mws_credentials) | resource |
+| [databricks_mws_networks.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.4.7/docs/resources/mws_networks) | resource |
+| [databricks_mws_storage_configurations.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.4.7/docs/resources/mws_storage_configurations) | resource |
+| [databricks_mws_workspaces.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.4.7/docs/resources/mws_workspaces) | resource |
 | [random_string.naming](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [time_sleep.wait](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) | resource |
-| [databricks_aws_assume_role_policy.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/data-sources/aws_assume_role_policy) | data source |
-| [databricks_aws_bucket_policy.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/data-sources/aws_bucket_policy) | data source |
-| [databricks_aws_crossaccount_policy.cross_account_iam_policy](https://registry.terraform.io/providers/databrickslabs/databricks/0.3.5/docs/data-sources/aws_crossaccount_policy) | data source |
+| [databricks_aws_assume_role_policy.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.4.7/docs/data-sources/aws_assume_role_policy) | data source |
+| [databricks_aws_bucket_policy.this](https://registry.terraform.io/providers/databrickslabs/databricks/0.4.7/docs/data-sources/aws_bucket_policy) | data source |
+| [databricks_aws_crossaccount_policy.cross_account_iam_policy](https://registry.terraform.io/providers/databrickslabs/databricks/0.4.7/docs/data-sources/aws_crossaccount_policy) | data source |
 
 ## Inputs
 
@@ -221,14 +221,16 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | default aws region | `string` | `"us-west-2"` | no |
 | <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | The CIDR block for the VPC | `string` | `"10.4.0.0/16"` | no |
+| <a name="input_custom_tags"></a> [custom\_tags](#input\_custom\_tags) | Extra custom tags | `any` | `null` | no |
 | <a name="input_databricks_account_id"></a> [databricks\_account\_id](#input\_databricks\_account\_id) | External ID provided by third party. | `string` | n/a | yes |
 | <a name="input_databricks_account_password"></a> [databricks\_account\_password](#input\_databricks\_account\_password) | databricks account password | `string` | n/a | yes |
 | <a name="input_databricks_account_username"></a> [databricks\_account\_username](#input\_databricks\_account\_username) | databricks account username | `string` | n/a | yes |
+| <a name="input_databricks_hostname"></a> [databricks\_hostname](#input\_databricks\_hostname) | databricks hostname | `string` | `"https://accounts.cloud.databricks.com"` | no |
 | <a name="input_existing_role_name"></a> [existing\_role\_name](#input\_existing\_role\_name) | If you want to use existing role name, else a new role will be created | `string` | `null` | no |
-| <a name="input_prjid"></a> [prjid](#input\_prjid) | (Required) Name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply' | `string` | n/a | yes |
+| <a name="input_prjid"></a> [prjid](#input\_prjid) | Name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply' | `string` | n/a | yes |
 | <a name="input_profile_for_iam"></a> [profile\_for\_iam](#input\_profile\_for\_iam) | profile to use for IAM | `string` | `null` | no |
 | <a name="input_profile_to_use"></a> [profile\_to\_use](#input\_profile\_to\_use) | Getting values from ~/.aws/credentials | `string` | `"default"` | no |
-| <a name="input_teamid"></a> [teamid](#input\_teamid) | (Required) Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply' | `string` | n/a | yes |
+| <a name="input_teamid"></a> [teamid](#input\_teamid) | Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply' | `string` | n/a | yes |
 
 ## Outputs
 
@@ -249,6 +251,6 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 | <a name="output_storage_configuration_id"></a> [storage\_configuration\_id](#output\_storage\_configuration\_id) | databricks storage configuration id |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | vpc id |
 | <a name="output_vpc_route_table_ids"></a> [vpc\_route\_table\_ids](#output\_vpc\_route\_table\_ids) | list of VPC route tables IDs |
-| <a name="output_vpc_security_group_ids"></a> [vpc\_security\_group\_ids](#output\_vpc\_security\_group\_ids) | list of VPC security group IDs |
+| <a name="output_vpc_security_group_id"></a> [vpc\_security\_group\_id](#output\_vpc\_security\_group\_id) | list of VPC security group ID |
 | <a name="output_vpc_subnet_ids"></a> [vpc\_subnet\_ids](#output\_vpc\_subnet\_ids) | list of subnet ids within VPC |
 | <a name="output_workspace_url"></a> [workspace\_url](#output\_workspace\_url) | databricks workspace url |
