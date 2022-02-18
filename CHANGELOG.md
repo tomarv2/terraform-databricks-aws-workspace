@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## [v0.1.2](https://github.com/tomarv2/terraform-databricks-aws-workspace/releases/tag/v0.1.2) - 2022-02-18 17:01:53
+
+Adding support for PAT and custom tags S3
+
+### Bug Fixes
+
+- general:
+  - fixing PAT token and adding custom tags to s3 ([5a3126d](https://github.com/tomarv2/terraform-databricks-aws-workspace/commit/5a3126d1fc3236cd2e4a6a92a9d3274cd320b3f7)) ([#30](https://github.com/tomarv2/terraform-databricks-aws-workspace/pull/30))
+  - fixing PAT token and adding custom tags to s3 ([96c9338](https://github.com/tomarv2/terraform-databricks-aws-workspace/commit/96c93388215fb982afb44b7a56c9a2a65ce75fa8)) ([#30](https://github.com/tomarv2/terraform-databricks-aws-workspace/pull/30))
+  - fixing PAT token and adding custom tags to s3 ([86f944f](https://github.com/tomarv2/terraform-databricks-aws-workspace/commit/86f944fdb6bdf75807b722551651fd52b29b96ae)) ([#30](https://github.com/tomarv2/terraform-databricks-aws-workspace/pull/30))
+  - fixing PAT token and adding custom tags to s3 ([579e990](https://github.com/tomarv2/terraform-databricks-aws-workspace/commit/579e990a5dbc978470c44d8b72154c02ca72b1ae)) ([#30](https://github.com/tomarv2/terraform-databricks-aws-workspace/pull/30))
+  - fixing PAT token and adding custom tags to s3 ([adc2cd3](https://github.com/tomarv2/terraform-databricks-aws-workspace/commit/adc2cd378ce26ffbe89bdde4aea59ab305cbd5fc)) ([#30](https://github.com/tomarv2/terraform-databricks-aws-workspace/pull/30))
+
 ## [v0.1.1](https://github.com/tomarv2/terraform-databricks-aws-workspace/releases/tag/v0.1.1) - 2022-02-04 02:21:19
 
 *No description*
