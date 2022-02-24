@@ -79,6 +79,6 @@ _testmain.go
 /test/run.out
 /test/times.out
 
-# ignore test file(s)
-**test**
-.external_modules
+# ignore test related file(s)
+**/test**
+**.
