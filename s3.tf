@@ -1,5 +1,5 @@
 module "s3" {
-  source = "git::git@github.com:tomarv2/terraform-aws-s3.git?ref=v0.0.7"
+  source = "git::git@github.com:tomarv2/terraform-aws-s3.git?ref=v0.0.8"
 
   custom_tags = var.custom_tags
   # -----------------------------------------
