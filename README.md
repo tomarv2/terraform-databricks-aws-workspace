@@ -229,7 +229,7 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 | <a name="input_existing_role_name"></a> [existing\_role\_name](#input\_existing\_role\_name) | If you want to use existing role name, else a new role will be created | `string` | `null` | no |
 | <a name="input_prjid"></a> [prjid](#input\_prjid) | Name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply' | `string` | n/a | yes |
 | <a name="input_profile_for_iam"></a> [profile\_for\_iam](#input\_profile\_for\_iam) | profile to use for IAM | `string` | `null` | no |
-| <a name="input_profile_to_use"></a> [profile\_to\_use](#input\_profile\_to\_use) | Getting values from ~/.aws/credentials | `string` | `"default"` | no |
+| <a name="input_profile"></a> [profile\_to\_use](#input\_profile\_to\_use) | Getting values from ~/.aws/credentials | `string` | `"default"` | no |
 | <a name="input_teamid"></a> [teamid](#input\_teamid) | Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply' | `string` | n/a | yes |
 
 ## Outputs
