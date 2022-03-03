@@ -8,7 +8,7 @@ variable "prjid" {
   type        = string
 }
 
-variable "profile_to_use" {
+variable "profile" {
   description = "Getting values from ~/.aws/credentials"
   type        = string
   default     = "default"
