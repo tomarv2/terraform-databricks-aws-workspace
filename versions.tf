@@ -18,16 +18,17 @@ terraform {
 }
 
 provider "aws" {
-  region  = var.aws_region
+  region  = var.region
   profile = var.profile
 }
 
 provider "aws" {
   alias = "iam-management"
 
-  region  = var.aws_region
+  region  = var.region
   profile = local.profile
 }
+
 
 # initialize provider in "MWS" mode to provision new workspace
 provider "databricks" {

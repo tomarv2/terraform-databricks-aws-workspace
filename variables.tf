@@ -8,18 +8,6 @@ variable "prjid" {
   type        = string
 }
 
-variable "profile" {
-  description = "Getting values from ~/.aws/credentials"
-  type        = string
-  default     = "default"
-}
-
-variable "aws_region" {
-  description = "default aws region"
-  type        = string
-  default     = "us-west-2"
-}
-
 variable "databricks_hostname" {
   description = "databricks hostname"
   type        = string
@@ -51,12 +39,6 @@ locals {
   suffix = random_string.naming.result
 }
 
-variable "profile_for_iam" {
-  description = "profile to use for IAM"
-  default     = null
-  type        = string
-}
-
 variable "existing_role_name" {
   description = "If you want to use existing role name, else a new role will be created"
   default     = null
@@ -73,4 +55,22 @@ variable "custom_tags" {
   type        = any
   description = "Extra custom tags"
   default     = null
+}
+
+variable "profile" {
+  description = "profile to use for resource creation"
+  default     = "default"
+  type        = string
+}
+
+variable "profile_for_iam" {
+  description = "profile to use for IAM"
+  default     = null
+  type        = string
+}
+
+variable "region" {
+  description = "AWS region to deploy resources"
+  type        = string
+  default     = "us-east-1"
 }

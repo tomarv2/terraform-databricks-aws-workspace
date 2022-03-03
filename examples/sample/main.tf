@@ -1,16 +1,3 @@
-terraform {
-  required_version = ">= 1.0.1"
-  required_providers {
-    aws = {
-      version = "~> 3.63"
-    }
-  }
-}
-
-provider "aws" {
-  region = var.aws_region
-}
-
 module "databricks_workspace" {
   source = "../../"
 
@@ -19,11 +6,11 @@ module "databricks_workspace" {
   # - 'existing_role_name'
   profile_for_iam = "iam-admin"
   #existing_role_name         = "arn:aws:iam::123456789012:role/demo-role"
-  aws_region                  = var.aws_region
+
   databricks_account_username = "example@example.com"
   databricks_account_password = "sample123!"
   databricks_account_id       = "1234567-1234-1234-1234-1234567"
-
+  region                      = var.region
   custom_tags = tomap(
     {
       "Dept"        = "data",
