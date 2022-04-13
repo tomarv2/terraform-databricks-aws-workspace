@@ -171,6 +171,8 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 
 ![iam_role_trust_error](https://github.com/tomarv2/terraform-databricks-aws-workspace/raw/main/docs/images/iam_role_trust_error.png)
 
+
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -185,12 +187,12 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.74.3 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.63 |
 | <a name="provider_databricks"></a> [databricks](#provider\_databricks) | 0.5.1 |
 | <a name="provider_databricks.created_workspace"></a> [databricks.created\_workspace](#provider\_databricks.created\_workspace) | 0.5.1 |
 | <a name="provider_databricks.mws"></a> [databricks.mws](#provider\_databricks.mws) | 0.5.1 |
-| <a name="provider_random"></a> [random](#provider\_random) | 3.1.0 |
-| <a name="provider_time"></a> [time](#provider\_time) | 0.7.2 |
+| <a name="provider_random"></a> [random](#provider\_random) | ~> 3.1 |
+| <a name="provider_time"></a> [time](#provider\_time) | ~> 0.7 |
 
 ## Modules
 
@@ -260,3 +262,4 @@ Error: MALFORMED_REQUEST: Failed credentials validation checks: Spot Cancellatio
 | <a name="output_vpc_security_group_id"></a> [vpc\_security\_group\_id](#output\_vpc\_security\_group\_id) | list of VPC security group ID |
 | <a name="output_vpc_subnet_ids"></a> [vpc\_subnet\_ids](#output\_vpc\_subnet\_ids) | list of subnet ids within VPC |
 | <a name="output_workspace_url"></a> [workspace\_url](#output\_workspace\_url) | databricks workspace url |
+<!-- END_TF_DOCS -->
